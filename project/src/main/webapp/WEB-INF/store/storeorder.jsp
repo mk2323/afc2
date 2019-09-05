@@ -1,21 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-
-<link rel="stylesheet" href="/project/resources/common/css/top.css" />
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript"
 	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
@@ -72,8 +64,7 @@
 		                    var expJibunAddr = data.autoJibunAddress;
 		                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
 		                    guideTextBox.style.display = 'block';
-		                }
-						
+		                }						
 						else {
 							guideTextBox.innerHTML = '';
 							guideTextBox.style.display = 'none';
@@ -108,13 +99,11 @@
 
 		<div class="row cart-pg payment-deliver">
 			<h2 class="tit-txt-big tit-line">배송/결제정보 입력</h2>
-			<form id="myform" name="myform" action="/project/store/pay.do"
-				method="post" onsubmit="return submitCheck()">
-				<strong class="drv-msg pay">결제하는 분 정보</strong>
+			<form id="myform" name="myform" action="/project/store/pay.do" method="post" onsubmit="return submitCheck()">
+				<strong class="drv-msg pay">결제 정보</strong><br/>
 				<table class="form-list pay-list">
-					<caption class="screen-out">결제 정보</caption>
 					<colgroup>
-						<col style="width: 102px">
+						<col style="width: 120px">
 						<col>
 					</colgroup>
 
@@ -141,7 +130,7 @@
 
 						<tr>
 							<th scope="col">결제 금액</th>
-							<td>${order.totalPrice}원
+							<td><fmt:formatNumber value="${order.totalPrice}" type="number" /> 원
 							<input type="hidden"name="price"  value="${order.price}">
 							<input type="hidden"name="totalPrice"  value="${order.totalPrice}">
 							</td>
@@ -151,11 +140,10 @@
 					</tbody>
 				</table>
 				<br>
-				<strong class="drv-msg baesongReceiveInfo">배송받는 분 정보</strong> 
+				<strong class="drv-msg baesongReceiveInfo">배송 정보</strong> 
 				<table class="form-list baesongReceive">
-					<caption class="screen-out">배송 정보</caption>
 					<colgroup>
-						<col style="width: 102px">
+						<col style="width: 120px">
 						<col>
 					</colgroup>
 
@@ -163,12 +151,9 @@
 						<tr>
 							<th scope="col"><label for="zipcode1" class="tit-form">배송주소</label></th>
 							<td>
-								<div class="in-row"
-									style="position: relative; margin-top: -1px; width: 460px;">
-									<input type="text" id="or_postcode" placeholder="우편번호"
-										class="d_form mini" name="or_postcode"> <input
-										type="button" onclick="sample4_execDaumPostcode()"
-										value="우편번호 찾기"><br> <span> </span>
+								<div class="in-row" style="position: relative; margin-top: -1px; width: 460px;">
+									<input type="text" id="or_postcode" placeholder="우편번호" class="d_form mini" name="or_postcode"> <input
+										type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br> 
 
 								</div>
 								<p class="in-row">
@@ -193,7 +178,7 @@
 						<tr>
 							<th scope="col"><label for="" class="tit-form">연락처</label></th>
 							<td><input type="text" name="or_phone" class="tit-form" style="width: 148px"
-								maxlength="11" id="mobile" tabindex="4"
+								maxlength="11" id="mobile" tabindex="4" placeholder="연락처"
 								> 
 
 							</td>

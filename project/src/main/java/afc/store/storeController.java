@@ -30,7 +30,7 @@ public class storeController {
 		mav.setViewName("store");		
 		return mav;
 	}*/
-	@RequestMapping("/store.do")
+	@RequestMapping("/store/store.do")
 	public ModelAndView list(@RequestParam(defaultValue="name") String searchOption,
 					@RequestParam(defaultValue="") String keyword, 
 					@RequestParam(defaultValue="1") int curPage) throws Exception{		
@@ -172,7 +172,6 @@ public class storeController {
 	@RequestMapping(value="/store/ajax_storelist.do", method=RequestMethod.GET,
 			produces="application/json;charset=utf-8")
 	public @ResponseBody List<StoreDTO> ajaxstorelist(String category){
-		System.out.println("testddddd");
 		return service.storelist(category);
 		
 	}

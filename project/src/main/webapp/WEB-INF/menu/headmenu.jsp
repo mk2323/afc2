@@ -15,7 +15,7 @@
 			<li><a id="a" href="#">NEWS</a></li>
 			<li><a id="a" href="#">PHOTOS</a></li>s
 			<li><a id="a" href="#">VIDEOS</a></li>
-			<li><a id="a" href="/project/store.do">E-STORE</a></li>
+			<li><a id="a" href="/project/store/store.do">E-STORE</a></li>
 			<li><a id="a" href="#">RANKING</a></li>
 			<li><a id="a" href="/project/ticketing/matchlist.do">TICKETING</a></li>
 <!-- icons -->

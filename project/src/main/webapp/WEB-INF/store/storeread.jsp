@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	pageContext.setAttribute("br", "<br/>");
 	pageContext.setAttribute("cn", "\n");
@@ -13,16 +14,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-
-<link rel="stylesheet" href="/project/resources/common/css/top.css" />
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <style type="text/css">
 .btn_global {
@@ -88,8 +79,9 @@
 	function getSelect() {
 		countval = document.getElementById("count").value;
 		priceval = document.getElementById("price").value;
-		sum=countval*priceval;
-		totalPrice.value=sum;
+		var sum = countval*priceval;
+		//alert(sum);
+		$("#totalPrice").val(sum);
 	}
 	
 		
@@ -118,7 +110,7 @@
 							<tbody >
 								<tr class="btntr" align="right">
 									<td colspan="3">
-									<input type="button" value="수정하기 " 	class="modify" onclick="modify();">
+									<input type="button" value="수정하기 " class="modify" onclick="modify();">
 									<input type="button" value="삭  제" class="delbtn" onclick="del();"></td>
 								</tr>	
 								</br>
@@ -145,7 +137,7 @@
 										src="/project/resources/images/store/chk_10x10.gif" alt=""
 										width="9" height="9"></td>
 									<td bgcolor="#FFFFFF" height="23">판 매 가</td>
-									<td>: ${store.price} 원
+									<td>:<fmt:formatNumber value="${store.price}" type="number" /> 원
 									<input type="hidden" name="price" id="price" value="${store.price}"> </td>
 									
 								</tr>
@@ -208,28 +200,19 @@
 							</tbody>
 						</table>
 					</td>
-				</tr>
-				
-				
-			</tbody>
-			
-			
-			
+				</tr>				
+			</tbody>			
 		</table>
-		</form>
-		
+		</form>		
 		<hr />
 	</div>
 
 	<div align="center">
 		<img alt="내용" src="/project/resources/images/store/${store.content}">
 	</div>
-
-
 	<div align="center" class="container">
 		<hr />
 		<h3>상품후기</h3>
-
 		<form action="/project/store/board/insert.do?code=${store.code}">
 			<div>
 				<input type="hidden" name="code" value=${store.code}>

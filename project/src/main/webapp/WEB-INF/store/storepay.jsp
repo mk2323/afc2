@@ -28,7 +28,6 @@
 							merchant_uid : 'afc' + new Date().getTime(),
 							name : 'AFC 스토어 이용',
 							amount : '${order.totalPrice}',
-
 							buyer_name : '${order.or_name}',
 							buyer_tel : '${order.or_phone}',
 							buyer_addr : '${order.or_roadaddr}',
@@ -84,7 +83,7 @@
 										+ 'price=${order.price}&totalPrice=${order.totalPrice}&or_size=${order.or_size}&or_date='
 										+ today
 										+ '&or_phone=${order.or_phone}'
-										+ '&or_postcode=${order.or_postcode}&or_roadaddr=${order.or_roadaddr}&or_detailaddr=${order.or_detailaddr}&or_content=${order.or_content}';
+										+ '&or_postcode=${order.or_postcode}&or_roadaddr=${order.or_roadaddr}&or_detailaddr=${order.or_detailaddr}&or_content=${order.or_content}&or_payment=kakaopay';
 							} else {
 
 								msg = '결제에 실패하였습니다.';
@@ -94,7 +93,7 @@
 								alert(msg);
 								//alert('${order.price}');
 
-								location.href = '/project/store.do';
+								location.href = '/project/store/store.do';
 
 							}
 						});
@@ -104,7 +103,7 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container" style="height: 60%;">
 		<h2 align="center">결제 진행중 입니다.</h2>
 		<div class="progress">
 			<div class="progress-bar progress-bar-striped active"
