@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="signup.afc_mem.Afc_MemDTO" alias="member" />
+		<typeAlias type="ktds.afc.stadium.StadiumDTO" 	alias="stadium" />
+		<typeAlias type="ktds.afc.stadium.StadiumSectionDTO" alias="stadiumsection" />
+		<typeAlias type="ktds.afc.stadium.SectionSeatDTO" alias="sectionseat" />
+		<typeAlias type="afc.store.StoreDTO" alias="store" />
+		<typeAlias type="afc.store.BoardDTO" alias="board" />
+		<typeAlias type="afc.store.OrderDTO" alias="order" />
+		
+
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/store.xml" />
+		<mapper resource="mapper/member.xml" />
+		<mapper resource="mapper/stadium.xml" />
+	</mappers>
+</configuration>

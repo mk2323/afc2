@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+#fifalogo {
+	width: 60px;
+}
+
+#topmenu {
+	border: 3px solid rgb(50, 98, 149);
+	background: rgb(50, 98, 149);
+	width: 100%;
+	height: 90px;
+}
+
+#lefttop {
+	border: 3px solid rgb(50, 98, 149);
+	color: white;
+	font-size: 10pt;
+	font-style: oblique;
+	font-weight: bolder;
+	float: left;
+}
+
+#righttop {
+	padding-top: 25px;
+	color: rgba(255, 255, 255, 1);
+	float: right;
+}
+
+#login_i, #store_i, #search_i, #menu_i, #lang_i {
+	color: rgba(255, 255, 255, 1);
+	font-size: 20pt;
+}
+
+#login_i:HOVER, #store_i:HOVER, #search_i:HOVER, #menu_i:HOVER, #lang_i:HOVER
+	{
+	color: rgba(255, 255, 255, 0.4);
+}
+
+#qual, #news, #photos, #videos, #rank, #store, #tic, #africa, #asia, #eu,
+	#nca, #sa, #oce, #ticketing_menu1, #ticketing_menu2, #ticketing_menu3 {
+	color: rgba(50, 98, 149, 1);
+}
+
+#qual:HOVER, #news:HOVER, #photos:HOVER, #videos:HOVER, #rank:HOVER,
+	#store:HOVER, #tic:HOVER, #africa:HOVER, #asia:HOVER, #eu:HOVER, #nca:HOVER,
+	#sa:HOVER, #oce:HOVER, #ticketing_menu1:HOVER, #ticketing_menu2:HOVER,
+	#ticketing_menu3:HOVER {
+	color: rgba(50, 98, 149, 0.4);
+}
+
+#list1 {
+	color: rgba(102, 102, 102, 0.6);
+	font-size: large;
+	margin-left: 60px;
+}
+
+#list2 {
+	border-top: 1px solid rgb(50, 98, 149);
+	border-bottom: 1px solid rgb(50, 98, 149);
+	color: rgba(50, 98, 149, 0.6);
+	font-size: small;
+}

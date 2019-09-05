@@ -1,0 +1,7 @@
+facebook icon background color : rgb(59,89,152)
+
+image rollover : 
+<img src="/project/resources/images/facebook.png"		onmouseover="this.src='/project/resources/images/facebook_h.png';"		onmouseout="this.src='/project/resources/images/facebook.png';">
+
+링크 밑줄 삭제
+text-decoration: none;

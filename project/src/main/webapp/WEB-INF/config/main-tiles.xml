@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+
+	<!-- 템플릿을 정의(main화면 레이아웃 - 사용자페이지 템플릿) -->
+	<definition name="indexTemplate" 	template="/WEB-INF/layout/index.jsp">
+		<put-attribute name="top" value="/WEB-INF/top/head.jsp" />
+		<put-attribute name="headmenu" 	value="/WEB-INF/menu/headmenu.jsp" />
+		<put-attribute name="content" 	value="/WEB-INF/project/include/mainpage.jsp" />
+		<put-attribute name="footer" 	value="/WEB-INF/project/include/footer.jsp" />
+	</definition>
+
+	<!-- SIGNUP TEMPLATE -->
+	<definition name="signupTemplate"
+		template="/WEB-INF/layout/signuplayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/top/head.jsp" />
+		<put-attribute name="content"
+			value="/WEB-INF/signup/signup.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/project/include/footer.jsp" />
+	</definition>
+
+	<!-- SIGNUP -->
+	<definition name="signup" extends="signupTemplate">
+	</definition>
+
+	<definition name="mainTemplate" template="/WEB-INF/project/layout/mainlayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/project/include/top.jsp" />
+		<put-attribute name="menu" 	value="/WEB-INF/project/menu/qualifiersmenu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/project/include/mainpage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/project/include/footer.jsp" />
+	</definition>
+
+	<!-- MAIN -->
+	<definition name="index" extends="indexTemplate">
+	 		<put-attribute name="top" value="/WEB-INF/top/head.jsp" />
+		<put-attribute name="headmenu" 	value="/WEB-INF/menu/headmenu.jsp" />
+		<put-attribute name="content" 	value="/WEB-INF/project/include/mainpage.jsp" />
+		<put-attribute name="footer" 	value="/WEB-INF/project/include/footer.jsp" />
+	</definition>
+
+	<!-- TICKETING -->
+
+	<definition name="transportation" extends="indexTemplate">
+		<put-attribute name="top" value="/WEB-INF/top/head.jsp" />
+		<put-attribute name="headmenu" value="/WEB-INF/project/menu/ticketingmenu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/project/content/transportation.jsp" />
+		<put-attribute name="footer" 	value="/WEB-INF/project/include/footer.jsp" />
+</definition>
+
+		<!-- NEWS -->
+		<definition name="news" extends="indexTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/news/newsfront.jsp" />
+		</definition>
+
+		<!-- RANKING -->
+		<definition name="fifarank" extends="indexTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/fifaranking.jsp" />
+		</definition>
+		<definition name="asiarank" extends="indexTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/asiaranking.jsp" />
+		</definition>
+
+
+
+
+
+
+
+		<definition name="qualifiers" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/qualifiers.jsp" />
+		</definition>
+		<definition name="asia" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/asia.jsp" />
+		</definition>
+		<definition name="africa" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/africa.jsp" />
+		</definition>
+		<definition name="europe" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/europe.jsp" />
+		</definition>
+		<definition name="nca" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/nca.jsp" />
+		</definition>
+		<definition name="sa" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/sa.jsp" />
+		</definition>
+		<definition name="oceania" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/oceania.jsp" />
+		</definition>
+		<definition name="asia_teams" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/asia_teams.jsp" />
+		</definition>
+		<definition name="africa_teams" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/africa_teams.jsp" />
+		</definition>
+		<definition name="europe_teams" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/europe_teams.jsp" />
+		</definition>
+		<definition name="nca_teams" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/nca_teams.jsp" />
+		</definition>
+		<definition name="sa_teams" extends="mainTemplate">
+			<put-attribute name="content"
+				value="/WEB-INF/project/content/sa_teams.jsp" />
+		</definition>
+		
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

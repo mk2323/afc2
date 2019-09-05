@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ktds.afc.stadium">
+	<select id="section2search" parameterType="String" 
+										resultType="sectionseat">
+		select * 
+		from section_seat seat, stadium_section section
+		where section.section = #{section} and section.section_code = seat.section_code
+	</select>
+	<select id="showstadiumimg" resultType="String" parameterType="Map">
+		select seat.section_seat_img 
+		from section_seat seat, stadium_section section
+        where seat.section_name = #{section_name} and section.section = #{section}
+        and section.section_code = seat.section_code
+	</select>
+</mapper>

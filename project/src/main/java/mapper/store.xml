@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="afc.store">
+	<select id="listAll" resultType="store">
+		<include refid="pagingHeader"></include>
+		SELECT rownum, code,name, category, mainimg, content, price 
+		FROM item
+		<include refid="search"></include>
+		order by code desc
+		<include refid="pagingFooter"></include>	
+	</select>
+	<sql id="search">
+		<choose>
+			<when test="searchOption =='all'">
+				where (code like '%' ||#{keyword}||'%' 
+				or name like '%' ||#{keyword}|| '%'
+				or category like '%' || #{keyword}|| '%')			
+			</when>
+			<otherwise>
+				where ${searchOption} like '%' ||#{keyword}|| '%'
+			
+			</otherwise>
+		
+		</choose>
+	
+	
+	
+	</sql>	
+	
+	<sql id="pagingHeader">
+		select * from (
+			select rownum as rn, A.* from(
+	</sql>
+
+	<sql id="pagingFooter">
+		) A
+		) where rn between #{start} and #{end}	
+	</sql>
+
+	<select id="countArticle" resultType="int">
+	 select count(*)
+	 from item
+	 <include refid="search"></include>	
+	</select>
+
+
+	<select id="selectall" resultType="store">
+		select * from item
+	</select>
+
+	<select id="read" resultType="store" parameterType="String">
+		select * from
+		item where code=#{code}
+	</select>
+	
+	<delete id="storedel" parameterType="String">
+	{call
+	declare
+	begin
+		delete from item where code=#{code};
+		delete from review where code=#{code};
+	end}
+	
+	</delete>
+
+	<select id="boardlist" resultType="board" parameterType="String">
+		select * from review where code =#{code} order by re_date desc
+	</select>
+	
+	<delete id="boarddel" >
+		delete from review where review_no=#{review_no}
+	</delete>
+	
+	<insert id="insert" parameterType="board">
+		insert into review 
+		values(review_no.nextval,'user',#{code},#{title},#{content},sysdate)
+	</insert>
+	
+	
+	<insert id="storeinsert" parameterType="store">
+		insert into item values (#{code}, #{name}, #{category}, #{mainimg}, #{content}, #{price})
+	
+	</insert>
+	
+	<update id="storeupdate" parameterType="store" >
+		update item
+		set name=#{name}, category=#{category}, price=#{price}
+		where code=#{code}	
+	</update>
+	
+	<insert id="orderinsert"  parameterType="order">
+	 insert into afcorder
+	 values(#{or_num},#{id},#{or_name},#{count},#{price},#{totalPrice},#{or_size},#{or_date},#{or_phone},#{or_postcode},#{or_roadaddr},#{or_detailaddr},#{or_content},'kakao')	
+	
+	</insert>
+	
+	
+	<select id="categorysearch" parameterType="String" resultType="store">
+		select * from item where category = #{category}
+	
+	</select>
+	
+</mapper>

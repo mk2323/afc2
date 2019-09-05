@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.headmenu {
+	font-family: Audiowide;
+	font-size: 20pt;
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	padding-left: 20pt;
+	padding-top: 10pt;
+}
+
+#a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#a:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#icons {
+	text-decoration: none;
+	margin-left: 10pt;
+	cursor: default;
+}
+
+#store_i {
+	color: rgb(50, 98, 149);
+	margin-left: 80pt;
+}
+
+#store_i, #login_i, #lang_i, #search_i, #menu_i {
+	color: rgb(50, 98, 149);
+	cursor: pointer;
+}
+
+#store_i:hover, #login_i:hover, #lang_i:hover, #search_i:hover, #menu_i:hover {
+	color: rgba(50, 98, 149, 0.8);
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!-- MAIN -->
+	<view-controller path="/index.do" view-name="index" />
+<!-- SIGNUP -->
+	<view-controller path="/signup.do" view-name="signup" />
+<!-- MENU -->
+	<view-controller path="/qualifiers.do" view-name="qualifiers" />
+	<view-controller path="/asia.do" view-name="asia" />
+	<view-controller path="/africa.do" view-name="africa" />
+	<view-controller path="/europe.do" view-name="europe" />
+	<view-controller path="/nca.do" view-name="nca" />
+	<view-controller path="/sa.do" view-name="sa" />
+	<view-controller path="/oceania.do" view-name="oceania" />
+<!-- TEAMS -->
+	<view-controller path="/asia_teams.do" view-name="asia_teams" />
+	<view-controller path="/africa_teams.do" view-name="africa_teams" />
+	<view-controller path="/europe_teams.do" view-name="europe_teams" />
+	<view-controller path="/nca_teams.do" view-name="nca_teams" />
+	<view-controller path="/sa_teams.do" view-name="sa_teams" />
+<!-- TICKETING -->
+	<view-controller path="/ticketing.do" view-name="ticketing" />
+	<view-controller path="/ticketing2.do" view-name="ticketing2" />
+	<view-controller path="/ticketing_history.do" view-name="ticketing_history" />
+	<view-controller path="/transportation.do" view-name="transportation" />
+<!-- NEWS -->
+	<view-controller path="/news.do" view-name="news" />
+<!-- RANKING -->	
+	<view-controller path="/fifaranking.do" view-name="fifarank" />
+	<view-controller path="/asiaranking.do" view-name="asiarank" />
+	
+	<!-- store -->
+	<view-controller path="/store/insert.do" view-name="store/insert"/>
+</beans:beans>
