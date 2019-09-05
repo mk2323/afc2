@@ -127,18 +127,13 @@
 							</div>
 						</div>
 
-
-
-
-
 						<div class="form-group" id="itemid">
 							<!-- Button -->
 							<div class="col-sm-3 col-sm-offset-2">
 								<input type="submit" value="등록하기" class="btn btn-success" />
 							</div>
 						</div>
-					</div>
-					
+					</div>					
 				</div>
 			
 		</form>
