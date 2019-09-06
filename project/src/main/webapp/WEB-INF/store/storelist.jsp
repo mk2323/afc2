@@ -7,60 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/project/resources/common/css/top.css" />
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 
 
- $(document).ready(function() {
-	 $("#itemcategory>li").each(function(){
-		 $(this).click(function(){
-			 category = $(this).text();
-			 
-			 $("#itemcategory>li").removeAttr("class");
-			 $(this).attr("class","active");
-			 $.ajax({
-				url:"/project/store/ajax_storelist.do",
-				type:"get",
-				data:{"category":category},
-				success:function(data){
-					alert(data);
-					viewdata ="";
-					
-					for(i=0; i<data.length; i++){
-						alert(data[i].price);
-						
-						viewdata = viewdata + 
-		"<div class='col-lg-4 col-md-6 mb-4'>"+
-						"<div class='card h-100'>"+
-		"<a href='/project/store/read.do?code="+data[i].code+"&state=READ'>"+
-		"<img class='card-img-top' src='/project/resources/images/store/"+data[i].mainimg+"' alt=''></a>"+
-							"<div class='card-body'>"+
-								"<h4 class='card-title'>"+
-									"<a href='/project/store/read.do?code=${store.code}&state=READ'>"+data[i].name+"</a></h4>"+
-						"<h5>" +data[i].price+" 원</h5>	</div>	<br><br></div></div><div></div>	"								
-					}
-					$("#storedatalist").empty();
-					$("#storedatalist").append(viewdata);
-				},
-				error:function(a,b,c){
-					alert(c);
-				}				 
-			 })			 
-		 });
-		});
-	 });
+ 
  
  function list(page){
 	 location.href="/project/store.do?curPage="+page+"&searchOption-${map.searchOption}"+"&keyword=${map.keyword}";
-	 
+	// $("#keyword").val("");
  }
 </script>
 
@@ -72,9 +28,9 @@
 			<div class="col-lg-3">
 				<h1 class="my-4">E-Store</h1>
 				<div class="list-group">
-					<ul class="nav" id="itemcategory">
-					<li><a href="#" class="list-group-item">네덜란드</a></li>
-					<li><a href="#" class="list-group-item">대한민국</a></li>
+					<ul class="nav" >
+					<li><a href="/project/store/store.do" class="list-group-item">전체보기</a></li>
+					<li><a href="/project/store/store.do?searchOption=name&keyword=대한민국" class="list-group-item">대한민국</a></li>
 					<li><a href="#" class="list-group-item">독일</a></li>
 					</ul>
 				</div>
@@ -87,12 +43,12 @@
 
 <h1>상품 리스트</h1>
 		<br><br>
-		<form action="/project/store.do" name="form1">
+		<form action="/project/store/store.do" name="form1">
 			<select name="searchOption">
-				<option value="all" <c:out value="${map.searchOption == 'all'?'selected':'' }"/>> 전체검색 </option>
-				<option value="name"<c:out value="${map.searchOption == 'name'?'selected':''}"/> >상풍명</option>
+				<option value="all" <c:out value="${map.searchOption == 'all'?'selected':'' }"/>>전체검색 </option>
+				<option value="name"<c:out value="${map.searchOption == 'name'?'selected':''}"/>>상품명</option>
 			</select>
-			<input name="keyword" value="${map.keyword}">
+			<input name="keyword" id="keyword" value="${map.keyword}">
 			<input type="submit" value="조회">
 			${map.count}개의 상품이 있습니다.						
 		</form>
@@ -108,9 +64,8 @@
 								<div class="card-body">
 									<h4 class="card-title">
 										<a href="/project/store/read.do?code=${store.code}&state=READ">${store.name}</a>
-									</h4>		
-																
-									<h5>${store.price}원</h5>
+									</h4>																
+									<h5> <fmt:formatNumber value="${store.price}" type="number" />원</h5>
 								</div>
 								<br><br>
 							</div>
@@ -119,11 +74,10 @@
 					</c:forEach>
 		</span>				
 					<br>
-					<div>
-					
+					<div>					
 					<c:if test="${map.boardPager.curBlock > 1}">
 					<a href="javascript:list('1')">[처음]</a>
-				</c:if>
+					</c:if>
 				
 				<!-- 이전페이지 블록으로 이동 : 현재 페이지 블럭이 1보다 크면 [이전]하이퍼링크를 화면에 출력 -->
 				<c:if test="${map.boardPager.curBlock > 1}">
@@ -141,33 +95,19 @@
 							<a href="javascript:list('${num}')">${num}</a>&nbsp;
 						</c:otherwise>
 					</c:choose>
-				</c:forEach>
-				
+				</c:forEach>				
 				<!-- 다음페이지 블록으로 이동 : 현재 페이지 블럭이 전체 페이지 블럭보다 작거나 같으면 [다음]하이퍼링크를 화면에 출력 -->
 				<c:if test="${map.boardPager.curBlock <= map.boardPager.totBlock}">
 					<a href="javascript:list('${map.boardPager.nextPage}')">[다음]</a>
-				</c:if>
-				
+				</c:if>				
 				<!-- 끝페이지로 이동 : 현재 페이지가 전체 페이지보다 작거나 같으면 [끝]하이퍼링크를 화면에 출력 -->
 				<c:if test="${map.boardPager.curPage <= map.boardPager.totPage}">
 					<a href="javascript:list('${map.boardPager.totPage}')">[끝]</a>
-				</c:if>
-					
-					
-					
+				</c:if>					
 					</div>
-
-				</div>
-				<!-- /.row -->
-
-			</div>
-			<!-- /.col-lg-9 -->
-
+				</div>			
+			</div>		
 		</div>
-		<!-- /.row -->
-
 	</div>
-
-
 </body>
 </html>
