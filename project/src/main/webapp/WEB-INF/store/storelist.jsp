@@ -15,7 +15,7 @@
  
  
  function list(page){
-	 location.href="/project/store.do?curPage="+page+"&searchOption-${map.searchOption}"+"&keyword=${map.keyword}";
+	 location.href="/project/store/store.do?curPage="+page+"&searchOption-${map.searchOption}"+"&keyword=${map.keyword}";
 	// $("#keyword").val("");
  }
 </script>
@@ -37,10 +37,12 @@
 				<a href="/project/store/insert.do">등록하기</a>
 			</div>
 			<!-- /.col-lg-3 -->
+			
+			
+			
 			<div class="col-lg-9">
-
 				<div class="row" align="center">
-
+				<div class="body" style="width: 100%;">
 <h1>상품 리스트</h1>
 		<br><br>
 		<form action="/project/store/store.do" name="form1">
@@ -53,7 +55,6 @@
 			${map.count}개의 상품이 있습니다.						
 		</form>
 		<br><br>
-		<span id="storedatalist">
 		
 					<c:forEach var="store" items="${map.list}">
 						<div class="col-lg-4 col-md-6 mb-4">
@@ -70,11 +71,12 @@
 								<br><br>
 							</div>
 						</div>
-						<div></div>
 					</c:forEach>
-		</span>				
+					
 					<br>
-					<div>					
+					</div>			
+				
+					<div class="footer">					
 					<c:if test="${map.boardPager.curBlock > 1}">
 					<a href="javascript:list('1')">[처음]</a>
 					</c:if>
@@ -104,7 +106,8 @@
 				<c:if test="${map.boardPager.curPage <= map.boardPager.totPage}">
 					<a href="javascript:list('${map.boardPager.totPage}')">[끝]</a>
 				</c:if>					
-					</div>
+					</div>					
+					
 				</div>			
 			</div>		
 		</div>
