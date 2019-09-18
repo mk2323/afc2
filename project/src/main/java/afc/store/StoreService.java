@@ -9,6 +9,8 @@ public interface StoreService {
 	List<StoreDTO> storelist(String category);
 	StoreDTO read(String code);
 	
+	List<OrderDTO> storehistory();
+	
 	List<BoardDTO> boardlist(String code);
 	
 	int boarddelete(String review_no);

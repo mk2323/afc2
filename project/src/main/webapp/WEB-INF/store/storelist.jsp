@@ -27,14 +27,23 @@
 		<div class="row">
 			<div class="col-lg-3">
 				<h1 class="my-4">E-Store</h1>
+				<div>
 				<div class="list-group">
 					<ul class="nav" >
 					<li><a href="/project/store/store.do" class="list-group-item">전체보기</a></li>
 					<li><a href="/project/store/store.do?searchOption=name&keyword=대한민국" class="list-group-item">대한민국</a></li>
 					<li><a href="#" class="list-group-item">독일</a></li>
 					</ul>
+					
+					
 				</div>
-				<a href="/project/store/insert.do">등록하기</a>
+				<ul class="nav">
+				<li><a href="/project/store/purchase/history.do">구매내역</a></li>
+				
+				<li><a href="/project/store/insert.do">등록하기</a></li>
+				</ul>
+				</div>
+				
 			</div>
 			<!-- /.col-lg-3 -->
 			

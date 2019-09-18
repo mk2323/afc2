@@ -6,12 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 <script type="text/javascript"
 	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
@@ -67,11 +62,7 @@
 										});
 								//성공시 이동할 페이지
 								d = new Date();
-								today = d.getFullYear() + '년'
-										+ (d.getMonth() + 1) + '월'
-										+ d.getDate() + '일' + d.getHours()
-										+ '시' + d.getMinutes() + '분'
-										+ d.getSeconds() + '초';
+								today = d.getFullYear()+'-'+(d.getMonth() + 1)+'-'+d.getDate();//+'&nbsp'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
 								//alert(today);
 								ornum = rsp.merchant_uid;
 								//alert(rsp.paid_amount);//결제금액

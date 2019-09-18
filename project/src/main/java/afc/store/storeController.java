@@ -172,8 +172,15 @@ public class storeController {
 	@RequestMapping(value="/store/ajax_storelist.do", method=RequestMethod.GET,
 			produces="application/json;charset=utf-8")
 	public @ResponseBody List<StoreDTO> ajaxstorelist(String category){
-		return service.storelist(category);
-		
+		return service.storelist(category);		
+	}
+	@RequestMapping("/store/purchase/history.do")
+	public ModelAndView storehistory() {
+		List<OrderDTO> orderlist=service.storehistory();		
+		ModelAndView mav = new ModelAndView();		
+		mav.addObject("orderlist", orderlist);
+		mav.setViewName("store/history");		
+		return mav;
 	}
 	
 }

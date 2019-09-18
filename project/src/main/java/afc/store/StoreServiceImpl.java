@@ -110,6 +110,12 @@ public class StoreServiceImpl implements StoreService {
 		return dao.countArticle(searchOption, keyword);
 	}
 
+
+	@Override
+	public List<OrderDTO> storehistory() {
+		return dao.storehistory();
+	}
+
 }
 
 

@@ -6,13 +6,13 @@ public interface StoreDAO {
 	
 	List<StoreDTO> storelist();
 	
+	List<OrderDTO> storehistory();
+	
 	List<StoreDTO> categorySearch(String category);
 	
 	StoreDTO read(String code);
 	
-	List<BoardDTO> boardlist(String code);
-	
-	
+	List<BoardDTO> boardlist(String code);	
 	
 	int boarddelete(String review_no);
 	
