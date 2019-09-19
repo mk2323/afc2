@@ -12,6 +12,8 @@ public interface StoreDAO {
 	
 	StoreDTO read(String code);
 	
+	OrderDTO orderdetail(String or_num);
+	
 	List<BoardDTO> boardlist(String code);	
 	
 	int boarddelete(String review_no);

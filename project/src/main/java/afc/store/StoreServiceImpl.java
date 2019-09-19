@@ -116,6 +116,12 @@ public class StoreServiceImpl implements StoreService {
 		return dao.storehistory();
 	}
 
+
+	@Override
+	public OrderDTO orderdetail(String or_num) {
+		return dao.orderdetail(or_num);
+	}
+
 }
 
 

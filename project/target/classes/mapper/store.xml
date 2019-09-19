@@ -98,13 +98,14 @@
 	
 	
 	<select id="categorysearch" parameterType="String" resultType="store">
-		select * from item where category = #{category}
-	
+		select * from item where category = #{category}	
 	</select>
 	
 	<select id="history" parameterType="String" resultType="order">
-		select * from afcorder
-	
+		select * from afcorder	
+	</select>
+	<select id="orderdetail" parameterType="String" resultType="order">
+		select * from afcorder where or_num =#{or_num}
 	</select>
 	
 </mapper>

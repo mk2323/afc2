@@ -8,6 +8,7 @@ public interface StoreService {
 
 	List<StoreDTO> storelist(String category);
 	StoreDTO read(String code);
+	OrderDTO orderdetail(String or_num);
 	
 	List<OrderDTO> storehistory();
 	
