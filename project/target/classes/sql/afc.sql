@@ -11,3 +11,6 @@ insert into AFCORDER values('test', 'test','test', '1', '100','100','test', 2019
 
 
 select * from afcorder where or_num ='afc1568870415633';
+
+
+select to_char(or_date, 'yyyy-mm-dd') or_date, sum(totalPrice) totalPrice from AFCORDER group by to_char(or_date, 'yyyy-mm-dd'); 

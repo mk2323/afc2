@@ -85,7 +85,9 @@
 					<br>
 					</div>			
 				
-					<div class="footer">					
+				<div class="row">					
+						<div class="col-sm-12">	
+						<div class="footer">		
 					<c:if test="${map.boardPager.curBlock > 1}">
 					<a href="javascript:list('1')">[처음]</a>
 					</c:if>
@@ -115,8 +117,9 @@
 				<c:if test="${map.boardPager.curPage <= map.boardPager.totPage}">
 					<a href="javascript:list('${map.boardPager.totPage}')">[끝]</a>
 				</c:if>					
-					</div>					
-					
+					</div>	
+					</div>				
+					</div>
 				</div>			
 			</div>		
 		</div>

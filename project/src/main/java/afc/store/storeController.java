@@ -188,5 +188,9 @@ public class storeController {
 		mav.setViewName("store/history");		
 		return mav;
 	}
+	@RequestMapping("/store/sales.do")
+	public String storesales() {
+		return "store/sales";
+	}
 	
 }

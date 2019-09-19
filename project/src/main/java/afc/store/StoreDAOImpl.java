@@ -92,7 +92,4 @@ public class StoreDAOImpl implements StoreDAO {
 		return sqlSession.selectOne("afc.store.orderdetail", or_num);
 	}
 
-	
-
-
 }
