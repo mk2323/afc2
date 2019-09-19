@@ -122,6 +122,12 @@ public class StoreServiceImpl implements StoreService {
 		return dao.orderdetail(or_num);
 	}
 
+
+	@Override
+	public List<OrderDTO> storesales() {
+		return dao.storesales();
+	}
+
 }
 
 

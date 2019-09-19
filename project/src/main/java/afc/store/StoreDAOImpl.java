@@ -91,5 +91,9 @@ public class StoreDAOImpl implements StoreDAO {
 	public OrderDTO orderdetail(String or_num) {
 		return sqlSession.selectOne("afc.store.orderdetail", or_num);
 	}
+	@Override
+	public List<OrderDTO> storesales() {
+		return sqlSession.selectList("afc.store.storesales");
+	}
 
 }

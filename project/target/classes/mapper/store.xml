@@ -108,4 +108,9 @@
 		select * from afcorder where or_num =#{or_num}
 	</select>
 	
+	<select id="storesales" parameterType="String" resultType="order">
+		select to_char(or_date, 'yyyy-mm-dd') or_date, sum(totalPrice) totalPrice 
+	    from AFCORDER group by to_char(or_date, 'yyyy-mm-dd')
+	</select>
+	
 </mapper>

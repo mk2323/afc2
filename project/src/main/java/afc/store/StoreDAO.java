@@ -31,6 +31,9 @@ public interface StoreDAO {
 	List<StoreDTO> listAll(int start, int end, String searchOption, String keyword);
 	
 	int countArticle(String searchOption, String keyword);
+	
+	List<OrderDTO> storesales();
+	
 
 
 }

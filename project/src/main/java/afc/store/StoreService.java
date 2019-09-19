@@ -30,4 +30,6 @@ public interface StoreService {
 	
 	
 	int countArticle(String searchOption,String keyword);
+	
+	List<OrderDTO> storesales();
 }

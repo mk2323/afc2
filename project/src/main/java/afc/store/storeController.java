@@ -189,8 +189,12 @@ public class storeController {
 		return mav;
 	}
 	@RequestMapping("/store/sales.do")
-	public String storesales() {
-		return "store/sales";
+	public ModelAndView storesales() {
+		List<OrderDTO> storesales = service.storesales();
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("storesales", storesales);
+		mav.setViewName("store/sales");
+		return mav;
 	}
 	
 }
